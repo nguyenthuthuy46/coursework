@@ -7,6 +7,12 @@ $date2 = strtotime("2018-09-21 10:44:01");
 <html lang="en">
 <head>
     <?php include "../partials/html_header.php"; ?>
+    <style>
+        label.error{
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
 </head>
 <body class="sidebar-pinned ">
 <?php include "../partials/aside.php"; ?>
@@ -25,7 +31,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                     </p>
                 </div>
                 <div class="card-body ">
-                    <form action="">
+                    <form action="" id="create-account">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputName1">First Name</label>

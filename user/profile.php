@@ -12,6 +12,12 @@ $rowUserInfor = mysqli_fetch_array($result, MYSQLI_ASSOC);
     <html lang="en">
    <head>
        <?php include "partials/html_header.php"?>
+       <style>
+           label.error{
+               margin-top: 10px;
+               color: red;
+           }
+       </style>
    </head>
 
     <body class="sidebar-pinned ">
@@ -59,7 +65,7 @@ $rowUserInfor = mysqli_fetch_array($result, MYSQLI_ASSOC);
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="" name="forml" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                                    <form action="" name="forml" id="edit-profile" method="post" class="form-horizontal" enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="studentId">Student ID</label>
                                                             <input type="text" class="form-control" id="inputStudentId" name="idStudent">
@@ -107,7 +113,11 @@ $rowUserInfor = mysqli_fetch_array($result, MYSQLI_ASSOC);
                                                 <li class="nav-item">
                                                     <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#inforStudent" role="tab" aria-controls="home" aria-selected="true">About</a>
                                                 </li>
-
+                                                <?php if ($currentUser['role'] === "manager-coordinator" || $currentUser['role'] === "student") { ?>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#myFaculty" role="tab" aria-controls="profile" aria-selected="false">My Faculty</a>
+                                                </li>
+                                                <?php } ?>
                                             </ul>
                                         </div>
                                         <div class="about-student">
@@ -289,6 +299,22 @@ $rowUserInfor = mysqli_fetch_array($result, MYSQLI_ASSOC);
     <script src='https://d33wubrfki0l68.cloudfront.net/js/c36248babf70a3c7ad1dcd98d4250fa60842eea9/light/assets/vendor/apexchart/apexcharts.min.js'></script>
     <!--chart data for current dashboard-->
     <script src='https://d33wubrfki0l68.cloudfront.net/js/d678dabfdc5c3131d492af7ef517fbe46fbbd8e4/light/assets/js/dashboard-01.js'></script>
+
+   <script src="../assets/vendor/jquery.validate/jquery.validate.min.js"></script>
+   <script>
+       $(document).ready(function (){
+           $('#edit-profile').validate({
+               rules: {
+                   idStudent:"required",
+                   nameStudent: "required",
+               },
+               messages: {
+                   idStudent:"Please provide information.",
+                   nameStudent: "Please provide information.",
+               },
+           })
+       })
+   </script>
 
     </body>
 
