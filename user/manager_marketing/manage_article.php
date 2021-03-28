@@ -25,7 +25,11 @@ $studentSb = array();
 //$res = $conn->query("SELECT files.*, u.*,f.* FROM file_submit_to_topic as files INNER JOIN user as u ON files.file_userId_uploaded = u.u_id INNER JOIN faculty.f_id = user.faculty_id WHERE u.role = 'student' AND files.file_topic_uploaded = '$idTopic' ORDER BY id DESC LIMIT 1");
 $query = "SELECT file_submit_to_topic.*, user.*,faculty.* FROM file_submit_to_topic INNER JOIN user ON file_submit_to_topic.file_userId_uploaded = user.u_id INNER JOIN faculty ON faculty.f_id = user.faculty_id WHERE user.role = 'student' AND user.faculty_id = '$userFacultyId' AND file_submit_to_topic.file_topic_uploaded = '$idTopic'  ";
 if ($statusId != null) {
-    $query += " AND file_submit_to_topic.file_status = '$statusId'";
+    if ($statusId == "4") {
+        $query += " and file_submit_to_topic.id not in (select file_comment.file_submited_id from file_comment)";
+    } else {
+        $query += " AND file_submit_to_topic.file_status = '$statusId'";
+    }
 }
 
 
@@ -85,9 +89,10 @@ while ($rowSt = mysqli_fetch_array($topic_result)) {
                                                 <select class="form-control " data-select2-id="1" tabindex="-1"
                                                         aria-hidden="true" name="status_id">
                                                     <option selected="" data-select2-id="3">Select status</option>
-                                                    <option data-select2-id="16" value="1">Note Grade</option>
+                                                    <option data-select2-id="16" value="1">Processing</option>
                                                     <option data-select2-id="17" value="2">Approved</option>
                                                     <option data-select2-id="16" value="3">Rejected</option>
+                                                    <option data-select2-id="16" value="4">Not feedback</option>
                                                 </select>
                                                 </form>
                                             </div>
@@ -149,7 +154,7 @@ while ($rowSt = mysqli_fetch_array($topic_result)) {
 
                                             if (($stReport["file_status"]) == "1") {
                                                 ?>
-                                                <span class="badge badge-secondary">Note Grade</span>
+                                                <span class="badge badge-secondary">Processing</span>
                                                 </button>
                                                 <?php
 
