@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd899f67-b6e7-4d26-b940-cfb22c744b3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/student/chart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
