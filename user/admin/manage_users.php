@@ -7,6 +7,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
 <html lang="en">
 <head>
     <?php include "../partials/html_header.php"; ?>
+
 </head>
 <body class="sidebar-pinned ">
 <?php include "../partials/aside.php"; ?>
@@ -66,12 +67,12 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                             <td><?php echo $row["email"]; ?></td>
                                             <td>
                                                 <?php
-                                                if($row["status"] == 1){ ?>
-                                                <span class="badge badge-warning">Active</span>
-                                                <?php
-                                                }else { ?>
-                                                <span class="badge badge-danger">Blocked</span>
-                                                <?php
+                                                if ($row["status"] == 1) { ?>
+                                                    <span class="badge badge-warning">Active</span>
+                                                    <?php
+                                                } else { ?>
+                                                    <span class="badge badge-danger">Blocked</span>
+                                                    <?php
                                                 }
                                                 ?>
                                             </td>
@@ -118,7 +119,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="">
+                            <form action="" id="create-account-form">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName1">First Name</label>
@@ -133,7 +134,8 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                 </div>
                                 <div class="form-group">
                                     <label for="username">Username</label>
-                                    <input type="text" class="form-control" id="username" placeholder="Enter username..." required>
+                                    <input type="text" class="form-control" id="username"
+                                           placeholder="Enter username..."  name="username1"required>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail1">Email</label>
@@ -142,11 +144,13 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPass1">Password</label>
-                                    <input type="text" class="form-control" placeholder="Enter password" id="inputPass1" required>
+                                    <input type="text" class="form-control" placeholder="Enter password" id="inputPass1"
+                                           required>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPass2">Confirm Passs</label>
-                                    <input type="text" class="form-control" id="inputPass2" placeholder="Enter confirm password" name="inputConfirmPass" required>
+                                    <input type="text" class="form-control" id="inputPass2"
+                                           placeholder="Enter confirm password" name="inputConfirmPass" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputRole1">Roles</label>
@@ -159,10 +163,12 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddress1">Address</label>
-                                    <input type="text" class="form-control" id="inputAddress1" name="inputAddress" required>
+                                    <input type="text" class="form-control" id="inputAddress1" name="inputAddress"
+                                           required>
                                 </div>
                                 <div class="form-group">
-                                    <input class="btn btn-primary float-right btn-add-user" value="Create Account"></button>
+                                    <input class="btn btn-primary float-right btn-add-user"
+                                           value="Create Account"></button>
                                 </div>
                             </form>
                         </div>
@@ -185,10 +191,10 @@ $date2 = strtotime("2018-09-21 10:44:01");
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="">
+                            <form action="" id="create-account-form">
                                 <div class="form-group">
                                     <label for="inp-username">Username</label>
-                                    <input type="text" class="form-control" id="inp-username" required>
+                                    <input type="text" class="form-control" id="inp-username"  required>
                                 </div>
                                 <div class="form-group">
                                     <label for="inp-fullname">Full Name</label>
@@ -298,12 +304,13 @@ $date2 = strtotime("2018-09-21 10:44:01");
     <!--/ PLACE CODE INSIDE THIS AREA -->
 </main>
 <?php include "../partials/js_libs.php"; ?>
+<script src="../../assets/vendor/jquery.validate/jquery.validate.min.js"></script>
 
 <script>
     function add() {
         $(document).on('click', ".btn-create-user", function (e) {
             $('#addUser').modal();
-            $(document).on('click','.btn-add-user', function(e) {
+            $(document).on('click', '.btn-add-user', function (e) {
                 Utils.api("add_user_info", {
                     fullname: $('#inputName2').val() + $('#inputName2'),
                     username: $('#username').val(),
@@ -312,7 +319,6 @@ $date2 = strtotime("2018-09-21 10:44:01");
                     role: $('#inputRole').val(),
                     address: $('#inputAddress1').val(),
                 }).then(response => {
-
 
 
                 }).catch(err => {
@@ -392,6 +398,13 @@ $date2 = strtotime("2018-09-21 10:44:01");
 
         })
     }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+
+    })
 </script>
 </body>
 </html>

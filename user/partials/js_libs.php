@@ -1,4 +1,4 @@
-<script src="/assets/vendor/jquery/jquery.min.js"   ></script>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
 <script src="/assets/vendor/jquery-ui/jquery-ui.min.js"   ></script>
 <script src="/assets/vendor/popper/popper.js"   ></script>
 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"   ></script>

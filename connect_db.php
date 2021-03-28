@@ -6,10 +6,9 @@ if ($conn->connect_error) {
     die("Connect DB failed" . $conn->connect_error);
 }
 
-/*
+
 function formatDate($date){
     return date('g:i a',strtotime($date));
 }
 
-*/
 
