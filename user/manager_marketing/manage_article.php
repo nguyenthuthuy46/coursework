@@ -39,9 +39,11 @@ include "../../config.php";
                                                 <select class="form-control " data-select2-id="1" tabindex="-1"
                                                         aria-hidden="true">
                                                     <option selected="" data-select2-id="3">Select status</option>
+                                                    <option data-select2-id="16">Processing</option>
                                                     <option data-select2-id="16">Approved</option>
                                                     <option data-select2-id="17">Reject</option>
-                                                    <option data-select2-id="16">Processing</option>
+                                                    <option data-select2-id="16">Not Feedback</option>
+
                                                 </select>
                                             </div>
                                         </div>
@@ -57,42 +59,42 @@ include "../../config.php";
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>
-                        <div class="table-responsive p-t-10">
-                            <table id="example" class="table text-center" style="width:100%">
-                                <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>ID</th>
-                                    <th>Article Name</th>
-                                    <th>Student Owner</th>
-                                    <th>Faculty</th>
-                                    <th>Topic</th>
-                                    <th>Amount Of File</th>
-                                    <th>Status</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Article_01</td>
-                                    <td>Advance Cloud</td>
-                                    <td>ASM1</td>
-                                    <td>Nguyen Van B</td>
-                                    <td>Nguyen Van A</td>
-                                    <td>2</td>
-                                    <td><span class="badge badge-warning">Processing</span></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            </div>
+                            <div class="table-responsive p-t-10">
+                                <table id="example" class="table text-center" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>ID</th>
+                                        <th>Article Name</th>
+                                        <th>Student Owner</th>
+                                        <th>Topic</th>
+                                        <th>Amount Of File</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Article_01</td>
+                                        <td>Advance Cloud</td>
+                                        <td>ASM1</td>
+                                        <td>Nguyen Van A</td>
+                                        <td>2</td>
+                                        <td><span class="badge badge-warning">Processing</span></td>
+                                        <td><button role="button" class="btn btn-success">Download</button> </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 </main>

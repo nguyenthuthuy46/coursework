@@ -85,11 +85,11 @@
                         <a href="/user/student/index.php" class="menu-link">
                             <span class="menu-label">
                                 <span class="menu-name">
-                                    Home
+                                    Home Page
                                 </span>
                             </span>
                             <span class="menu-icon">
-                                <i class="icon-placeholder fe fe-activity "></i>
+                                <i class="icon-placeholder fe fe-home "></i>
                             </span>
                         </a>
                     </li>
@@ -114,7 +114,7 @@
                                 </span>
                             </span>
                             <span class="menu-icon">
-                                <i class="icon-placeholder fe fe-activity "></i>
+                                <i class="icon-placeholder fe fe-home "></i>
                             </span>
                         </a>
                     </li>
@@ -138,12 +138,12 @@
                                 </span>
                             </span>
                             <span class="menu-icon">
-                                <i class="icon-placeholder fe fe-activity "></i>
+                                <i class="icon-placeholder fe fe-home "></i>
                             </span>
                         </a>
                     </li>
                     <li class="menu-item ">
-                        <a href="/user/manager_marketing/manage_article.php" class="menu-link">
+                        <a href="../../user/manager_marketing/manage_article.php" class="menu-link">
                             <span class="menu-label">
                                 <span class="menu-name">Manage Article
                                 </span>

@@ -1,0 +1,102 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fd899f67-b6e7-4d26-b940-cfb22c744b3b\" name=\"Default Changelist\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/user/admin/index.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/account/login.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/account/login.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/connect_db.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/connect_db.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/user/admin/create-account.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/user/admin/create-account.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/user/admin/manage_users.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/user/admin/manage_users.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/user/partials/js_libs.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/user/partials/js_libs.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/user/profile.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/user/profile.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/user/student/submit.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/user/student/submit.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1qNneQVfSDPUQPQSJvv9gkrMaDS\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fd899f67-b6e7-4d26-b940-cfb22c744b3b\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1616929010119</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1616929010119</updated>\r\n      <workItem from=\"1616929011824\" duration=\"3777000\" />\r\n      <workItem from=\"1616933100393\" duration=\"324000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,15 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="fd899f67-b6e7-4d26-b940-cfb22c744b3b" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/user/admin/index.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/login.php" afterDir="false" />
++    <list default="true" id="fd899f67-b6e7-4d26-b940-cfb22c744b3b" name="Default Changelist" comment="validate submit + change pass">
++      <change afterPath="$PROJECT_DIR$/user/manager_marketing/dashboard.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/connect_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/connect_db.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/user/admin/create-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin/create-account.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/user/admin/manage_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin/manage_users.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/user/partials/js_libs.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/partials/js_libs.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/user/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/profile.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/user/student/submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/student/submit.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/user/partials/aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/partials/aside.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -20,6 +17,11 @@
+     <execution />
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitSEFilterConfiguration">
+@@ -31,6 +33,9 @@
+     </file-type-list>
+   </component>
+   <component name="ProjectId" id="1qNneQVfSDPUQPQSJvv9gkrMaDS" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+Index: user/manager_marketing/manage_article.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\ninclude \"../../config.php\";\r\n\r\n?>\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <?php include \"../partials/html_header.php\"; ?>\r\n</head>\r\n<body class=\"sidebar-pinned \">\r\n<?php include \"../partials/aside.php\"; ?>\r\n<main class=\"admin-main\">\r\n    <?php include \"../partials/header.php\"; ?>\r\n\r\n    <section class=\"manage-articles\">\r\n        <div class=\"container m-t-30\">\r\n            <div class=\"row\">\r\n                <div class=\"col-12\">\r\n                    <div class=\"card\">\r\n                        <div class=\"card-header\">\r\n                            <div class=\"card-title\">\r\n                                <h4> Manage Articles</h4>\r\n                                </h4>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"card-body\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-6\">\r\n                                    <div class=\"form-group has-search\">\r\n                                        <span class=\"fa fa-search form-control-feedback\"></span>\r\n                                        <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-6\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-sm-6\">\r\n                                            <div class=\"form-group \">\r\n                                                <select class=\"form-control \" data-select2-id=\"1\" tabindex=\"-1\"\r\n                                                        aria-hidden=\"true\">\r\n                                                    <option selected=\"\" data-select2-id=\"3\">Select status</option>\r\n                                                    <option data-select2-id=\"16\">Approved</option>\r\n                                                    <option data-select2-id=\"17\">Reject</option>\r\n                                                    <option data-select2-id=\"16\">Processing</option>\r\n                                                </select>\r\n                                            </div>\r\n                                        </div>\r\n                                        <div class=\"col-sm-6\">\r\n                                            <div class=\"form-group \">\r\n                                                <select class=\"form-control \" data-select2-id=\"1\" tabindex=\"-1\"\r\n                                                        aria-hidden=\"true\">\r\n                                                    <option selected=\"\" data-select2-id=\"3\">Select topic</option>\r\n                                                    <option data-select2-id=\"16\">Cup Cake</option>\r\n                                                    <option data-select2-id=\"17\">Donut</option>\r\n                                                    <option data-select2-id=\"18\">Eclair</option>\r\n                                                    <option data-select2-id=\"19\">Froyo</option>\r\n                                                </select>\r\n                                            </div>\r\n                                        </div>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n                        <div class=\"table-responsive p-t-10\">\r\n                            <table id=\"example\" class=\"table text-center\" style=\"width:100%\">\r\n                                <thead>\r\n                                <tr>\r\n                                    <th>No</th>\r\n                                    <th>ID</th>\r\n                                    <th>Article Name</th>\r\n                                    <th>Student Owner</th>\r\n                                    <th>Faculty</th>\r\n                                    <th>Topic</th>\r\n                                    <th>Amount Of File</th>\r\n                                    <th>Status</th>\r\n                                </tr>\r\n                                </thead>\r\n                                <tbody>\r\n                                <tr>\r\n                                    <td>1</td>\r\n                                    <td>Article_01</td>\r\n                                    <td>Advance Cloud</td>\r\n                                    <td>ASM1</td>\r\n                                    <td>Nguyen Van B</td>\r\n                                    <td>Nguyen Van A</td>\r\n                                    <td>2</td>\r\n                                    <td><span class=\"badge badge-warning\">Processing</span></td>\r\n                                </tr>\r\n                                </tbody>\r\n                            </table>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        </div>\r\n    </section>\r\n</main>\r\n<link href=\"path/to/select2.min.css\" rel=\"stylesheet\" /> <br>\r\n<script src=\"path/to/select2.min.js\"></script>\r\n<?php include \"../partials/js_libs.php\"; ?>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/user/manager_marketing/manage_article.php b/user/manager_marketing/manage_article.php
+--- a/user/manager_marketing/manage_article.php	
++++ b/user/manager_marketing/manage_article.php	
+@@ -39,9 +39,10 @@
+                                                 <select class="form-control " data-select2-id="1" tabindex="-1"
+                                                         aria-hidden="true">
+                                                     <option selected="" data-select2-id="3">Select status</option>
++                                                    <option data-select2-id="16">Processing</option>
+                                                     <option data-select2-id="16">Approved</option>
+                                                     <option data-select2-id="17">Reject</option>
+-                                                    <option data-select2-id="16">Processing</option>
++                                                    <option data-select2-id="16">Not Feedback</option>
+                                                 </select>
+                                             </div>
+                                         </div>
+@@ -69,22 +70,22 @@
+                                     <th>ID</th>
+                                     <th>Article Name</th>
+                                     <th>Student Owner</th>
+-                                    <th>Faculty</th>
+                                     <th>Topic</th>
+                                     <th>Amount Of File</th>
+                                     <th>Status</th>
++                                    <th>Action</th>
+                                 </tr>
+                                 </thead>
+                                 <tbody>
+                                 <tr>
+                                     <td>1</td>
+-                                    <td>Article_01</td>
+-                                    <td>Advance Cloud</td>
++                                    <td><a href="#">Article_01</a></td>
++                                    <td><a href="#">Advance Cloud<a></td>
+                                     <td>ASM1</td>
+-                                    <td>Nguyen Van B</td>
+                                     <td>Nguyen Van A</td>
+                                     <td>2</td>
+                                     <td><span class="badge badge-warning">Processing</span></td>
++                                    <td><a role="button" class="btn btn-success">Download</a></td>
+                                 </tr>
+                                 </tbody>
+                             </table>
