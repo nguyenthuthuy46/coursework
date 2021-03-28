@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd899f67-b6e7-4d26-b940-cfb22c744b3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Chart/examples/ChartJS.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chart/examples/chart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chart/examples/examples.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chart/src/Antoineaugusti/EasyPHPCharts/Chart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connect_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/connect_db.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,7 @@
       <updated>1616929010119</updated>
       <workItem from="1616929011824" duration="3777000" />
       <workItem from="1616933100393" duration="324000" />
+      <workItem from="1616947292810" duration="4242000" />
     </task>
     <servers />
   </component>
