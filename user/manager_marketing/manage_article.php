@@ -11,13 +11,40 @@ $userId = $_SESSION["current_user"]["u_id"];
 // $file_submit_to_system = mysqli_fetch_assoc($result);
 // $faculty = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM faculty WHERE f_id = $file_faculty_id"), MYSQLI_ASSOC);
 
+$statusId = null;
+if ($_POST['action'] == "status_id") {
+    $statusId = $_POST['status_id'];
+};
+
+$topic_id = null;
+if ($_POST['action'] == "topic_id") {
+    $topic_id = $_POST['topic_id'];
+};
+
 $studentSb = array();
 //$res = $conn->query("SELECT files.*, u.*,f.* FROM file_submit_to_topic as files INNER JOIN user as u ON files.file_userId_uploaded = u.u_id INNER JOIN faculty.f_id = user.faculty_id WHERE u.role = 'student' AND files.file_topic_uploaded = '$idTopic' ORDER BY id DESC LIMIT 1");
-$result = $conn->query("SELECT file_submit_to_topic.*, user.*,faculty.* FROM file_submit_to_topic INNER JOIN user ON file_submit_to_topic.file_userId_uploaded = user.u_id INNER JOIN faculty ON faculty.f_id = user.faculty_id WHERE user.role = 'student' AND user.faculty_id = '$userFacultyId' AND file_submit_to_topic.file_topic_uploaded = '$idTopic'  ");
+$query = "SELECT file_submit_to_topic.*, user.*,faculty.* FROM file_submit_to_topic INNER JOIN user ON file_submit_to_topic.file_userId_uploaded = user.u_id INNER JOIN faculty ON faculty.f_id = user.faculty_id WHERE user.role = 'student' AND user.faculty_id = '$userFacultyId' AND file_submit_to_topic.file_topic_uploaded = '$idTopic'  ";
+if ($statusId != null) {
+    $query += " AND file_submit_to_topic.file_status = '$statusId'";
+}
+
+
+if ($topic_id != null) {
+    $query += " AND file_submit_to_topic.file_topic_uploaded = '$topic_id'";
+}
+
+printf($query);
+$result = $conn->query($query);
 
 
 while ($rowSt = mysqli_fetch_array($result)) {
     $studentSb[] = $rowSt;
+}
+$topicSb = array();
+
+$topic_result = $conn->query("SELECT * FROM topic");
+while ($rowSt = mysqli_fetch_array($topic_result)) {
+    $topicSb[] = $rowSt;
 }
 ?>
 <!DOCTYPE html>
@@ -53,26 +80,33 @@ while ($rowSt = mysqli_fetch_array($result)) {
                                 <div class="col-sm-6">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <div class="form-group ">
+                                            <div class="form-group">
+                                                <form method="POST" action="manage_article.php?action=status_id">
                                                 <select class="form-control " data-select2-id="1" tabindex="-1"
-                                                        aria-hidden="true">
+                                                        aria-hidden="true" name="status_id">
                                                     <option selected="" data-select2-id="3">Select status</option>
-                                                    <option data-select2-id="16">Approved</option>
-                                                    <option data-select2-id="17">Reject</option>
-                                                    <option data-select2-id="16">Processing</option>
+                                                    <option data-select2-id="16" value="1">Note Grade</option>
+                                                    <option data-select2-id="17" value="2">Approved</option>
+                                                    <option data-select2-id="16" value="3">Rejected</option>
                                                 </select>
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group ">
+                                                <form method="POST" action="manage_article.php?action=topic_id">
                                                 <select class="form-control " data-select2-id="1" tabindex="-1"
                                                         aria-hidden="true">
                                                     <option selected="" data-select2-id="3">Select topic</option>
-                                                    <option data-select2-id="16">Cup Cake</option>
-                                                    <option data-select2-id="17">Donut</option>
-                                                    <option data-select2-id="18">Eclair</option>
-                                                    <option data-select2-id="19">Froyo</option>
+                                                    <?php
+                                                    foreach ($topicSb as $row) {
+                                                        ?>
+                                                        <option data-select2-id="16" value="<?php echo $row["topic_id"] ?>"><?=$row["topic_name"]?></option>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </select>
+                                                </form>
                                             </div>
                                         </div>
                                 </div>
