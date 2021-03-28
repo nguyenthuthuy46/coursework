@@ -34,7 +34,7 @@
                 <li class="active"><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contribution">Contribution</a></li>
-                <li><a href="account/login.php">Login</a></li>
+                <li><a href="/account/login.php">Login</a></li>
             </ul>
         </nav><!-- .nav-menu -->
     </div>

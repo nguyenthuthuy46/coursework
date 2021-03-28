@@ -119,7 +119,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" id="create-account-form">
+                            <form action="">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName1">First Name</label>
@@ -135,7 +135,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                 <div class="form-group">
                                     <label for="username">Username</label>
                                     <input type="text" class="form-control" id="username"
-                                           placeholder="Enter username..."  name="username1"required>
+                                           placeholder="Enter username..." required>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail1">Email</label>
@@ -194,7 +194,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                             <form action="" id="create-account-form">
                                 <div class="form-group">
                                     <label for="inp-username">Username</label>
-                                    <input type="text" class="form-control" id="inp-username"  required>
+                                    <input type="text" class="form-control" id="inp-username" name="username1" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="inp-fullname">Full Name</label>
@@ -304,7 +304,6 @@ $date2 = strtotime("2018-09-21 10:44:01");
     <!--/ PLACE CODE INSIDE THIS AREA -->
 </main>
 <?php include "../partials/js_libs.php"; ?>
-<script src="../../assets/vendor/jquery.validate/jquery.validate.min.js"></script>
 
 <script>
     function add() {
@@ -399,11 +398,24 @@ $date2 = strtotime("2018-09-21 10:44:01");
         })
     }
 </script>
-
+<script src="../../assets/vendor/jquery.validate/jquery.validate.min.js"></script>
 
 <script>
     $(document).ready(function () {
-
+        $('#create-account-form').validate({
+            rules: {
+                username1: {
+                    required: true,
+                    minlength: 6,
+                }
+            },
+            messages: {
+                username1: {
+                    required: "Please provide information",
+                    minlength: "The username needs to be at least 6 characters",
+                }
+            },
+        })
     })
 </script>
 </body>
