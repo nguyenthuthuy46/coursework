@@ -27,15 +27,7 @@
                 </li>
             <?php else: ?>
                 <?php if ($currentUser['role'] === "admin"): ?>
-                    <li class="menu-item ">
-                        <a href="#" class="open-dropdown menu-link">
-                            <span class="menu-label">
-                                <span class="menu-name">Dashboard</span>
-                            </span>
-                            <span class="menu-icon"><i class="icon-placeholder fe fe-edit "></i>
-                             </span>
-                        </a>
-                    </li>
+
                     <li class="menu-item active opened">
                         <a href="#" class="open-dropdown menu-link">
                             <span class="menu-label">
@@ -139,6 +131,18 @@
                             </span>
                             <span class="menu-icon">
                                 <i class="icon-placeholder fe fe-home "></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu-item active ">
+                        <a href="../../user/manager_marketing/dashboard.php" class="menu-link">
+                            <span class="menu-label">
+                                <span class="menu-name">
+                                    Dashboard
+                                </span>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="icon-placeholder fe fe-activity "></i>
                             </span>
                         </a>
                     </li>
