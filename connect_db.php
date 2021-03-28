@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "", "contribution_appication");
+    $conn = mysqli_connect("localhost", "root", "1234", "contribution_appication");
 
 $db_selected = mysqli_select_db($conn, "contribution_application");
 

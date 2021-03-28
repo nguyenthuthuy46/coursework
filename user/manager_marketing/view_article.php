@@ -25,8 +25,9 @@ $userId = $_SESSION["current_user"]["u_id"];
 // exit;
 
 
+/** @var TYPE_NAME $conn */
 $fileContent = $conn->query("SELECT file_content.* from `file_content` where `file_submit_Id` = '$idFile'");
-$fileComment = $conn->query("SELECT file_comment.*,u.* from `file_comment` INNER JOIN user as u ON u.u_id = file_comment.file_comment_user where `file_submited_Id` = '$idFile'");
+$fileComment = $conn->query(v"SELECT file_comment.*,u.* from `file_comment` INNER JOIN user as u ON u.u_id = file_comment.file_comment_user where `file_submited_Id` = '$idFile'");
 $fileSubmission = $conn->query("SELECT file_submit_to_topic.*, user.*,faculty.* FROM file_submit_to_topic INNER JOIN user ON file_submit_to_topic.file_userId_uploaded = user.u_id INNER JOIN faculty ON faculty.f_id = user.faculty_id WHERE user.role = 'student' AND user.faculty_id = '$userFacultyId'  ORDER BY id DESC LIMIT 1");
 
 
@@ -232,6 +233,42 @@ if (isset($_POST['uploadCommnet'])) {
                 ?>
             </div>
             <hr>
+            <div class="feedback-submission">
+                <a href="view_article.php.php?file_id=<?php echo $fileContent['file_content_id'] ?>">Download</a>
+            </div>
+            <?php
+            if (isset($_GET['file_id'])) {
+                $id = $_GET['file_id'];
+
+                // fetch file to download from database
+
+                $sql = "SELECT * from `file_content` where `file_submit_Id` = '$id'";
+                $result = mysqli_query($conn, $sql);
+
+                $file = mysqli_fetch_assoc($result);
+                $filepath = '../student/file_library/' . $file['file_content_name'];
+
+                if (file_exists($filepath)) {
+                    header('Content-Description: File Transfer');
+                    header('Content-Type: application/octet-stream');
+                    header('Content-Disposition: attachment; filename=' . basename($filepath));
+                    header('Expires: 0');
+                    header('Cache-Control: must-revalidate');
+                    header('Pragma: public');
+                    header('Content-Length: ' . filesize('uploads/' . $file['name']));
+                    readfile('../student/file_library/' . $file['file_content_name']);
+//
+//                    // Now update downloads count
+//                    $newCount = $file['downloads'] + 1;
+//                    $updateQuery = "UPDATE file_content SET downloads=$newCount WHERE id=$id";
+//                    mysqli_query($conn, $updateQuery);
+                    exit;
+                }
+
+            }
+            ?>
+            <hr>
+
         </div>
     </div>
     </div>
