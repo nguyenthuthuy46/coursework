@@ -7,7 +7,7 @@ if (isset($_GET)) {
     var_dump($_GET);
 }
 
-$userid = $_SESSION["userid"];
+$userid = $_SESSION["current_user"]["u_id"];
 $partnerId = $_SESSION["partnerId"];
 
 $query = "SELECT * FROM tbl_chat WHERE tbl_chat.use_id_1 in ($userid, $partnerId) and tbl_chat.use_id_2 in ($userid, $partnerId) ORDER BY id DESC ";

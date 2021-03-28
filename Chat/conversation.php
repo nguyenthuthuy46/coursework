@@ -3,8 +3,12 @@ include '../connect_db.php';
 session_start();
 // Perform query
 /** @var TYPE_NAME $conn */
-$userid = 38;
-$partnerId = 39;
+$userid = $_SESSION["current_user"]["u_id"];
+$partnerId = null;
+if (isset($_GET['partner'])) {
+    $partnerId = $_GET['partner'];
+}
+
 $_SESSION["userid"] = $userid;
 $_SESSION["partnerId"] = $partnerId;
 
@@ -15,10 +19,17 @@ $_SESSION["partnerId"] = $partnerId;
 $query = "select * FROM tbl_chat WHERE id in (SELECT max(id) FROM tbl_chat WHERE tbl_chat.use_id_1 = $userid OR tbl_chat.use_id_2 = $userid GROUP BY use_id_1, use_id_2)";
 $res = $conn->query($query);
 $conversation = [];
+$a = 0;
 while($row = $res->fetch_array()):
     $partnerIdCon = $row["use_id_1"] == $userid ? $row["use_id_2"] : $row["use_id_1"];
+    if ($partnerId == null && $a == 0) {
+        $partnerId = $partnerIdCon;
+        $a += 1;
+    }
     $conversation[$partnerIdCon] = $row;
 endwhile;
+
+
 //var_dump($res);
 //$useridIsOne = $res["use_id_1"] == $userid;
 //$_SESSION["useridIsOne"] = $useridIsOne;
@@ -77,6 +88,7 @@ endwhile;
                         $name = mysqli_fetch_array($conn->query("SELECT user.username FROM user where user.u_id = $partnerIdCon"), MYSQLI_ASSOC);
                         if ($partnerIdCon == $partnerId) {
                         ?>
+
                         <div class="chat_list active_chat">
                             <div class="chat_people">
                                 <div class="chat_ib">
@@ -92,6 +104,7 @@ endwhile;
                     <?php
                         } else {
                             ?>
+                    <a href="conversation.php?partner=<?php echo $partnerIdCon ?>">
                             <div class="chat_list">
                                 <div class="chat_people">
                                     <div class="chat_ib">
@@ -104,6 +117,7 @@ endwhile;
                                     </div>
                                 </div>
                             </div>
+                    </a>
                     <?php
                         }
                     }

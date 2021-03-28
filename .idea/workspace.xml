@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd899f67-b6e7-4d26-b940-cfb22c744b3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/admin/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/connect_db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/admin/create-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin/create-account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/admin/manage_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin/manage_users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/manage_coordinator/reportPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/manage_coordinator/reportPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/manager_marketing/manage_article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/manager_marketing/view_article.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/manager_marketing/view_article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/partials/js_libs.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/partials/js_libs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/student/submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/student/submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/conversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/conversation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
