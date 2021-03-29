@@ -1,0 +1,90 @@
+Index: user/partials/aside.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><aside class=\"admin-sidebar\">\r\n    <div class=\"admin-sidebar-brand\">\r\n        <!-- begin sidebar branding-->\r\n        <img class=\"admin-brand-logo\">LOGO TEAM </img>\r\n        <!-- end sidebar branding-->\r\n        <div class=\"ml-auto\">\r\n            <!-- sidebar pin-->\r\n            <a href=\"#\" class=\"admin-pin-sidebar btn-ghost btn btn-rounded-circle\"></a>\r\n            <!-- sidebar close for mobile device-->\r\n            <a href=\"#\" class=\"admin-close-sidebar\"></a>\r\n        </div>\r\n    </div>\r\n    <div class=\"admin-sidebar-wrapper js-scrollbar\">\r\n        <ul class=\"menu\">\r\n            <?php if (!$isLoggedIn) : ?>\r\n                <li class=\"menu-item active \">\r\n                    <a href=\"../account/login.php\" class=\"menu-link\">\r\n                        <span class=\"menu-label\">\r\n                            <span class=\"menu-name\">\r\n                                Login\r\n                            </span>\r\n                        </span>\r\n                        <span class=\"menu-icon\">\r\n                            <i class=\"icon-placeholder fe fe-activity \"></i>\r\n                        </span>\r\n                    </a>\r\n                </li>\r\n            <?php else : ?>\r\n                <?php if ($currentUser['role'] === \"admin\") : ?>\r\n                    <li class=\"menu-item \">\r\n                        <a href=\"#\" class=\"open-dropdown menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">Dashboard</span>\r\n                            </span>\r\n                            <span class=\"menu-icon\"><i class=\"icon-placeholder fe fe-edit \"></i>\r\n                            </span>\r\n                        </a>\r\n                    </li>\r\n                    <li class=\"menu-item active opened\">\r\n                        <a href=\"#\" class=\"open-dropdown menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">Manage System\r\n                                    <span class=\"menu-arrow\"></span> </span>\r\n                            </span>\r\n                            <span class=\"menu-icon\">\r\n                                <i class=\"mdi mdi-buffer mdi-24px \"></i>\r\n                            </span>\r\n                        </a>\r\n                        <!--submenu-->\r\n                        <ul class=\"sub-menu\" style=\"display: block;\">\r\n                            <li class=\"menu-item \">\r\n                                <a href=\"../user/admin/manage_users.php\" class=\" menu-link\">\r\n                                    <span class=\"menu-label\">\r\n                                        <span class=\"menu-name\">Manage User</span>\r\n                                    </span>\r\n                                    <span class=\"menu-icon\">\r\n                                        <i class=\"mdi mdi-account-multiple mdi-24px \"></i>\r\n                                    </span>\r\n                                </a>\r\n                            </li>\r\n                            <li class=\"menu-item\">\r\n                                <a href=\"../user/admin/manage_faculties.php\" class=\" menu-link\">\r\n                                    <span class=\"menu-label\">\r\n                                        <span class=\"menu-name\">Manage Faculty</span>\r\n                                    </span>\r\n                                    <span class=\"menu-icon\">\r\n                                        <i class=\"mdi mdi-briefcase mdi-24px \"></i>\r\n                                    </span>\r\n                                </a>\r\n                            </li>\r\n                            <li class=\"menu-item\">\r\n                                <a href=\"../user/admin/manage_topics.php\" class=\" menu-link\">\r\n                                    <span class=\"menu-label\">\r\n                                        <span class=\"menu-name\">Manage Topic</span>\r\n                                    </span>\r\n                                    <span class=\"menu-icon\">\r\n                                        <i class=\"mdi mdi-book-open-variant mdi-24px \"></i>\r\n                                    </span>\r\n                                </a>\r\n                            </li>\r\n                        </ul>\r\n                    </li>\r\n                <?php elseif ($currentUser['role'] === \"student\") : ?>\r\n                    <li class=\"menu-item active \">\r\n                        <a href=\"../user/student/index.php\" class=\"menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">\r\n                                    Home\r\n                                </span>\r\n                            </span>\r\n                            <span class=\"menu-icon\">\r\n                                <i class=\"icon-placeholder fe fe-activity \"></i>\r\n                            </span>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li class=\"menu-item \">\r\n                        <a href=\"../user/student/view-all-topic.php\" class=\"menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">My Topic\r\n                                </span>\r\n                            </span>\r\n                            <span class=\"menu-icon\">\r\n                                <i class=\"icon-placeholder fe fe-folder\"></i>\r\n                            </span>\r\n                        </a>\r\n                    </li>\r\n                <?php elseif ($currentUser['role'] === \"manager-coordinator\") : ?>\r\n                    <li class=\"menu-item active \">\r\n                        <a href=\"../user/index.php\" class=\"menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">\r\n                                    Home Page\r\n                                </span>\r\n                            </span>\r\n                            <span class=\"menu-icon\">\r\n                                <i class=\"icon-placeholder fe fe-activity \"></i>\r\n                            </span>\r\n                        </a>\r\n                    </li>\r\n                    <li class=\"menu-item \">\r\n                        <a href=\"../user/manage_coordinator/my_topic.php\" class=\"menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">Manager Topic\r\n                                </span>\r\n                            </span>\r\n                            <span class=\"menu-icon\">\r\n                                <i class=\"icon-placeholder fe fe-folder\"></i>\r\n                            </span>\r\n                        </a>\r\n                    </li>\r\n                <?php elseif ($currentUser['role'] === \"manager-marketing\") : ?>\r\n                    <li class=\"menu-item active \">\r\n                        <a href=\"../user/index.php\" class=\"menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">\r\n                                    Home Page\r\n                                </span>\r\n                            </span>\r\n                            <span class=\"menu-icon\">\r\n                                <i class=\"icon-placeholder fe fe-activity \"></i>\r\n                            </span>\r\n                        </a>\r\n                    </li>\r\n                    <li class=\"menu-item \">\r\n                        <a href=\"../user/manager_marketing/manage_article.php\" class=\"menu-link\">\r\n                            <span class=\"menu-label\">\r\n                                <span class=\"menu-name\">Manage Article\r\n                                </span>\r\n                            </span>\r\n                            <span class=\"menu-icon\">\r\n                                <i class=\"icon-placeholder fe fe-folder\"></i>\r\n                            </span>\r\n                        </a>\r\n                    </li>\r\n                <?php endif ?>\r\n\r\n            <?php endif; ?>\r\n        </ul>\r\n    </div>\r\n</aside>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/user/partials/aside.php b/user/partials/aside.php
+--- a/user/partials/aside.php	(revision afa7978b91d559c1f1bce1994572bc87ceede0f9)
++++ b/user/partials/aside.php	(date 1616940141369)
+@@ -27,15 +27,7 @@
+                 </li>
+             <?php else : ?>
+                 <?php if ($currentUser['role'] === "admin") : ?>
+-                    <li class="menu-item ">
+-                        <a href="#" class="open-dropdown menu-link">
+-                            <span class="menu-label">
+-                                <span class="menu-name">Dashboard</span>
+-                            </span>
+-                            <span class="menu-icon"><i class="icon-placeholder fe fe-edit "></i>
+-                            </span>
+-                        </a>
+-                    </li>
++
+                     <li class="menu-item active opened">
+                         <a href="#" class="open-dropdown menu-link">
+                             <span class="menu-label">
+@@ -131,7 +123,7 @@
+                     </li>
+                 <?php elseif ($currentUser['role'] === "manager-marketing") : ?>
+                     <li class="menu-item active ">
+-                        <a href="../user/index.php" class="menu-link">
++                        <a href="../index.php" class="menu-link">
+                             <span class="menu-label">
+                                 <span class="menu-name">
+                                     Home Page
+@@ -143,7 +135,16 @@
+                         </a>
+                     </li>
+                     <li class="menu-item ">
+-                        <a href="../user/manager_marketing/manage_article.php" class="menu-link">
++                    <li class="menu-item ">
++                        <a href="../manager_marketing/dashboard.php" class="open-dropdown menu-link">
++                            <span class="menu-label">
++                                <span class="menu-name">Dashboard</span>
++                            </span>
++                            <span class="menu-icon"><i class="icon-placeholder fe fe-edit "></i>
++                            </span>
++                        </a>
++                    </li>
++                        <a href="../manager_marketing/manage_article.php" class="menu-link">
+                             <span class="menu-label">
+                                 <span class="menu-name">Manage Article
+                                 </span>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fd899f67-b6e7-4d26-b940-cfb22c744b3b\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Chat/chat.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Chat/chat.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Chat/conversation.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Chat/conversation.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1qNneQVfSDPUQPQSJvv9gkrMaDS\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fd899f67-b6e7-4d26-b940-cfb22c744b3b\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1616929010119</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1616929010119</updated>\r\n      <workItem from=\"1616929011824\" duration=\"3777000\" />\r\n      <workItem from=\"1616933100393\" duration=\"324000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision afa7978b91d559c1f1bce1994572bc87ceede0f9)
++++ b/.idea/workspace.xml	(date 1616940141472)
+@@ -1,10 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="fd899f67-b6e7-4d26-b940-cfb22c744b3b" name="Default Changelist" comment="">
++    <list default="true" id="fd899f67-b6e7-4d26-b940-cfb22c744b3b" name="Default Changelist" comment="validate submit + change pass">
++      <change afterPath="$PROJECT_DIR$/user/manager_marketing/dashboard.php" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Chat/chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/chat.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Chat/conversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/conversation.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/user/partials/aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/partials/aside.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -26,6 +26,9 @@
+     </file-type-list>
+   </component>
+   <component name="ProjectId" id="1qNneQVfSDPUQPQSJvv9gkrMaDS" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+diff --git a/user/manager_marketing/dashboard.php b/user/manager_marketing/dashboard.php
+new file mode 100644

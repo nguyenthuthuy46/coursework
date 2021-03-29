@@ -22,7 +22,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <h4> Manage Topic </h4>
+                                <h4> Manage Contribution </h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -35,7 +35,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                 </div>
                                 <div class="col-sm-6 ">
                                     <a href="" class="btn btn-info float-right" role="button" data-toggle="modal"
-                                       data-target="#addTopic"><i class="mdi mdi-clipboard-plus"></i> Add Topic
+                                       data-target="#addTopic"><i class="mdi mdi-clipboard-plus"></i> Add Contribution
                                     </a>
                                 </div>
                             </div>
@@ -45,10 +45,10 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                     <tr>
                                         <th>No</th>
                                         <th>ID</th>
-                                        <th>Topic Name</th>
-                                        <th>Topic Description</th>
-                                        <th>Topic Start Deadline</th>
-                                        <th>Topic End Deadline</th>
+                                        <th>Contribution Name</th>
+                                        <th>Contribution Description</th>
+                                        <th>Contribution Start Deadline</th>
+                                        <th>Contribution End Deadline</th>
                                         <!-- <th>Articles</th> -->
                                         <th>Status</th>
                                         <th>Action</th>
@@ -99,7 +99,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="addTopic">Add Topic</h5>
+                            <h5 class="modal-title" id="addTopic">Add Contribution</h5>
                             </h5>
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-label="Close">
@@ -109,17 +109,17 @@ $date2 = strtotime("2018-09-21 10:44:01");
                         <div class="modal-body">
                             <form action="">
                                 <div class="form-group">
-                                    <label for="inputNameTopic">Topic Name</label>
+                                    <label for="inputNameTopic">Contribution Name</label>
                                     <input type="text" class="form-control" id="inputNameTopic"
                                            name="nameTopic"  required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputTopicId">Topic ID</label>
+                                    <label for="inputTopicId">Contribution ID</label>
                                     <input type="text" class="form-control" id="inputTopicId"
                                            name="topicId" placeholder="Input Id" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputIdManager">Manager Topic</label>
+                                    <label for="inputIdManager">Manager Contribution</label>
                                     <input type="text" class="form-control"
                                            placeholder="Input name" required>
                                 </div>
@@ -155,7 +155,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="editTopic">Edit Topic</h5>
+                            <h5 class="modal-title" id="editTopic">Edit Contribution</h5>
                             </h5>
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-label="Close">
@@ -165,12 +165,12 @@ $date2 = strtotime("2018-09-21 10:44:01");
                         <div class="modal-body">
                             <form action="">
                                 <div class="form-group">
-                                    <label for="inputNameTopic">Topic Name</label>
+                                    <label for="inputNameTopic">Contribution Name</label>
                                     <input type="text" class="form-control" id="topicName"
                                            required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputTopicId">Topic ID</label>
+                                    <label for="inputTopicId">Contribution ID</label>
                                     <input type="text" class="form-control" id="topicCode"
                                            required>
                                 </div>
@@ -213,7 +213,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="detailTopic">Detai
-                                Infomation Topic
+                                Infomation Contribution
                             </h5>
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-label="Close">
@@ -225,11 +225,11 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
-                                        <td>Topic Name</td>
+                                        <td>Contribution Name</td>
                                         <td id="t-name"></td>
                                     </tr>
                                     <tr>
-                                        <td>Topic ID</td>
+                                        <td>Contribution ID</td>
                                         <td id="t-id"></td>
                                     </tr>
                                     <tr>
