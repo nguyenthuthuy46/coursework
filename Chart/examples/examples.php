@@ -1,4 +1,5 @@
 <?php
+include "../../connect_db.php";
 require "../src/AntoineAugusti/EasyPHPCharts/Chart.php";
 use Antoineaugusti\EasyPHPCharts\Chart;
 ?>
@@ -45,29 +46,42 @@ use Antoineaugusti\EasyPHPCharts\Chart;
 		//	An example of a bar chart with multiple datasets
 		*/
         /** @var TYPE_NAME $conn */
-        $chartTopicbyYear = $conn->query("select faculty.f_name, year(topic.topic_deadline), count(*) as contributions from faculty join topic on faculty.f_id = topic.faculty_id group by year(topic.topic_deadline), faculty.f_id");
-        printf($chartTopicbyYear);
+        $chartTopicbyYear = $conn->query("select faculty.f_id, faculty.f_name, year(topic.topic_deadline) as year, count(*) as contributions from faculty join topic on faculty.f_id = topic.faculty_id group by year(topic.topic_deadline), faculty.f_id");
+
         $topicbyYear = array();
+        $yearTopicbyYear = array();
+        $keyTopicbyYear = array();
+
         while ($rowSt = mysqli_fetch_array($chartTopicbyYear)) {
-            array_push($topicbyYear[$rowSt["year"]], $rowSt );
+            $yearTopicbyYear[$rowSt["year"]][] = $rowSt;
+            $keyTopicbyYear[$rowSt["f_id"]] = $rowSt["f_name"];
         }
 
         $dataTopicbyYear = array();
-        $yearTopicbyYear = array();
-        $topicbyYear = array();
-
-        foreach ($topicbyYear as $row) {
-            array_push($yearTopicbyYear, $row["year"]);
-            array_push($topicbyYear, $row["f_name"]);
-            array_push($dataTopicbyYear[$row["f_name"]], $row["contributions"]);
+        foreach ($keyTopicbyYear as $f_id => $row) {
+            $falcutyData = array();
+            foreach ($yearTopicbyYear as $yearData) {
+                $hasData = false;
+                foreach ($yearData as $facultyInYearData) {
+                    if($facultyInYearData["f_id"] == $f_id) {
+                        $falcutyData[] = $facultyInYearData["contributions"];
+                        $hasData = true;
+                        break;
+                    }
+                }
+                if (!$hasData) {
+                    $falcutyData[] = "0";
+                }
+            }
+            $dataTopicbyYear[] = $falcutyData;
         }
 
         $barChart = new Chart('bar', 'examplebar');
 
-		$barChart->set('data', array(array(0, 2), array(0, 1), array(0, 1)));
-		$barChart->set('legend', $yearTopicbyYear);
+		$barChart->set('data', $dataTopicbyYear);
+		$barChart->set('legend', array_keys($yearTopicbyYear));
 		// We don't to use the x-axis for the legend so we specify the name of each dataset
-		$barChart->set('legendData', array('Faculty 1', 'Faculty 2', 'Faculty 3'));
+		$barChart->set('legendData', array_keys($keyTopicbyYear));
 		$barChart->set('displayLegend', true);
 		echo $barChart->returnFullHTML();
 
