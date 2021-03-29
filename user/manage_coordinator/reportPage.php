@@ -4,6 +4,7 @@ include "../../connect_db.php";
 $idFile = $_GET['idfile'];
 $userFacultyId = $_SESSION["current_user"]["faculty_id"];
 $userId = $_SESSION["current_user"]["u_id"];
+/** @var TYPE_NAME $conn */
 $fileContent = $conn->query("SELECT * from `file_content` where `file_submit_Id` = '$idFile'");
 // $viewFile = array();
 // while ($view = mysqli_fetch_array($fileContent)) {
@@ -92,7 +93,7 @@ if (isset($_POST['uploadCommnet'])) {
                                     </div>
                                     <div class="col-md-8 mt-1">
                                         <h5 style="color: #000; ">Nguyen Minh Phong</h5>
-                                        <h5 style="color: #000; ">Topic Cloud computing</h6>
+                                        <h6 style="color: #000; ">Topic Cloud computing</h6>
                                     </div>
                                 </div>
                                 <div class=" col-lg-12 text-left ">
