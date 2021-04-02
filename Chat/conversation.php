@@ -1,9 +1,9 @@
 <?php
-include '../connect_db.php';
-session_start();
+include '../config.php';
 // Perform query
 /** @var TYPE_NAME $conn */
-$userid = $_SESSION["current_user"]["u_id"];
+//$userid = $_SESSION["current_user"]["u_id"];
+$userid = "44";
 $partnerId = null;
 if (isset($_GET['partner'])) {
     $partnerId = $_GET['partner'];
@@ -61,10 +61,13 @@ endwhile;
         }
         setInterval(function(){ajax()},1000);
     </script>
-
+    <?php include "../user/partials/html_header.php"; ?>
 </head>
 <body>
-<div class="container">
+<?php include "../user/partials/aside.php"; ?>
+<main class="admin-main">
+    <?php include "../user/partials/header.php"; ?>
+<div class="container m-t-30">
     <div class="messaging">
         <div class="inbox_msg">
             <div class="inbox_people">
@@ -135,7 +138,7 @@ endwhile;
                             <label for="message">Chat:</label><br>
                             <textarea name="message" id="message-write" class="write_msg" placeholder="Type a message"></textarea><br>
                     </div>
-                    <input type="submit" name="submit" class="msg_send_btn"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></input>
+                    <input type="submit" name="submit" class="msg_send_btn"><i class="fa fa-paper-plane-o" aria-hidden="true" value=""></i></input>
                     </form>
                     <?php
                     if (isset($_POST['submit'])) {
@@ -156,6 +159,7 @@ endwhile;
 
     </div>
 </div>
+</main>
 </body>
 </html>
 <!---->

@@ -3,9 +3,9 @@ include '../connect_db.php';
 /** @var TYPE_NAME $conn */
 session_start();
 
-if (isset($_GET)) {
-    var_dump($_GET);
-}
+//if (isset($_GET)) {
+//    var_dump($_GET);
+//}
 
 $userid = $_SESSION["current_user"]["u_id"];
 $partnerId = $_SESSION["partnerId"];

@@ -121,27 +121,27 @@ use Antoineaugusti\EasyPHPCharts\Chart;
                             $keyTopicbyYear = array();
 
                             while ($rowSt = mysqli_fetch_array($chartTopicbyYear)) {
-                            $yearTopicbyYear[$rowSt["year"]][] = $rowSt;
-                            $keyTopicbyYear[$rowSt["f_id"]] = $rowSt["f_name"];
+                                $yearTopicbyYear[$rowSt["year"]][] = $rowSt;
+                                $keyTopicbyYear[$rowSt["f_id"]] = $rowSt["f_name"];
                             }
 
                             $dataTopicbyYear = array();
                             foreach ($keyTopicbyYear as $f_id => $row) {
-                            $falcutyData = array();
-                            foreach ($yearTopicbyYear as $yearData) {
-                            $hasData = false;
-                            foreach ($yearData as $facultyInYearData) {
-                            if($facultyInYearData["f_id"] == $f_id) {
-                            $falcutyData[] = $facultyInYearData["contributions"];
-                            $hasData = true;
-                            break;
-                            }
-                            }
-                            if (!$hasData) {
-                            $falcutyData[] = "0";
-                            }
-                            }
-                            $dataTopicbyYear[] = $falcutyData;
+                                $falcutyData = array();
+                                foreach ($yearTopicbyYear as $yearData) {
+                                    $hasData = false;
+                                    foreach ($yearData as $facultyInYearData) {
+                                        if ($facultyInYearData["f_id"] == $f_id) {
+                                            $falcutyData[] = $facultyInYearData["contributions"];
+                                            $hasData = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!$hasData) {
+                                        $falcutyData[] = "0";
+                                    }
+                                }
+                                $dataTopicbyYear[] = $falcutyData;
                             }
 
                             $barChart = new Chart('bar', 'examplebar');
